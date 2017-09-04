@@ -58,15 +58,15 @@ function init() {
 		pause : false,
 		sound: true
 	};
- 
+
 	document.onmousemove = moveMouse;
-	
+
 	gameTimeLast = new Date();
 	update();
 }
 
 function moveMouse(e) {
-	var y;	
+	var y;
 	if(!e) {
 		e = window.event;
 		y = e.event.offsetY;
@@ -74,7 +74,7 @@ function moveMouse(e) {
 	else {
 		y = e.pageY;
 	}
-	
+
 	y -= canvas.offsetTop;
 	if(y - game.playerHeight/2 >= 0 && y + game.playerHeight/2 <= canvas.height)
 		game.player.y = y;
@@ -85,7 +85,7 @@ function playSound(snd) {
 		try {
 			if (!snd.paused) {
 				// Pause and reset it
-				snd.pause();	
+				snd.pause();
 				snd.currentTime = 0;
 			}
 			snd.play();
@@ -109,7 +109,7 @@ function update() {
 			game.computer.y += game.computer.speed * moveAmount;
 		else if(game.computer.y - 20 > game.ball.y && game.computer.y - game.playerHeight/2 >= 0)
 			game.computer.y -= game.computer.speed * moveAmount;
-		
+
 		/* Change direction of ball when hitting a wall */
 		if (game.ball.y + game.ball.radius > canvas.height
 				|| game.ball.y - game.ball.radius < 0) {
@@ -127,11 +127,11 @@ function update() {
 			if (game.ball.y + game.ball.radius >= game.player.y	- game.playerHeight / 2
 					&& game.ball.y + game.ball.radius <= game.player.y	+ game.playerHeight / 2) {
 				playSound(soundRight);
-				
+
 				if(game.ball.vx <= game.ball.maxspeed) {
 					game.ball.vx += game.ball.multiplier;
 				}
-				
+
 				changeBallDirection(game.player);
 			} else {
 				game.computer.score++;
@@ -141,15 +141,15 @@ function update() {
 			}
 		}
 		/* checking collision between ball and cpu */
-		else if(game.ball.x - game.ball.radius <= game.playerWidth) {		
+		else if(game.ball.x - game.ball.radius <= game.playerWidth) {
 			if (game.ball.y + game.ball.radius >= game.computer.y - game.playerHeight / 2
 					&& game.ball.y + game.ball.radius <= game.computer.y + game.playerHeight / 2) {
 				playSound(soundLeft);
-				
+
 				if(game.ball.vx >= -game.ball.maxspeed) {
 					game.ball.vx -= game.ball.multiplier;
 				}
-				
+
 				changeBallDirection(game.computer);
 			} else {
 				game.player.score++;
@@ -234,6 +234,7 @@ function intro() {
 	}
 
 	var soundButton = document.getElementById('soundButton');
+
 	soundButton.onclick = function() {
 		if (!game.sound) {
 			game.sound = true;

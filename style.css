@@ -11,7 +11,7 @@
 	margin: 0 auto;
 	width: 640px;
 	height: 360px;
-	background: #150000;
+	background: #000;
 	padding: 10px;
 }
 
@@ -19,7 +19,7 @@
 	Title screen
 */
 #titleScreen {
-	border: 2px solid #333;
+	border: 2px solid #fff;
 	padding: 1em;
 	margin: 0 auto;
 	margin-top: 3em;
@@ -28,21 +28,22 @@
 }
 #titleScreen h1 {
 	font-weight: normal;
-	color: #ffc;
+	color: #fff;
 	font-size: 1.5em;
+	text-align: center;
 }
 #titleScreen p {
 	font-weight: bold;
 	font-size: 0.8em;
-	color: #ccc;
-	text-align: left;
+	color: #fff;
+	text-align: center;
 }
 
 #titleScreen .vcard {
 	font-size: 0.8em;
 }
 #titleScreen .vcard a {
-	color: #ccc;
+	color: #fff;
 }
 
 /*
@@ -57,14 +58,14 @@
 	position: relative;
 	top: -2.5em;
 	left: 0;
-	text-align: center;	
+	text-align: center;
 }
 
 #gameCanvas {
 	position: relative;
 	top: 0;
 	left: 0;
-	color: #ccc;
+	color: #fff;
 }
 #computerScore,
 #playerScore {
@@ -72,19 +73,22 @@
 	top: -340px;
 	left: 0;
 	font-size: 3em;
-	color: #ccc;
+	color: #fff;
 	line-height: 0;
 	width: 40%;
 	opacity:0.8;filter:alpha(opacity=80);
+	font-family: 'Helvetica Neue'
 }
 
 #computerScore {
 	float: left;
 	text-align: right;
+	font-family: 'Helvetica Neue'
 }
 #playerScore {
 	float: right;
 	text-align: left;
+	font-family: 'Helvetica Neue'
 }
 
 #pauseText {
@@ -95,9 +99,10 @@
 	font-size: 3em;
 	margin: 3em auto;
 	opacity:0.4;filter:alpha(opacity=40);
-	color: #ffc;
+	color: #fff;
 	text-align: center;
 	line-height: 0;
+	font-family: 'Helvetica Neue'
 }
 
 /*
@@ -106,12 +111,12 @@
 #playButton,
 #pauseButton,
 #soundButton {
-	border: 2px solid #333;
-	background: #111;
-	color: #ffc;
+	border: 2px solid #fff;
+	background: #000;
+	color: #fff;
 	padding: 0.3em 2em;
 	font-size: 0.8em;
-	opacity:0.4;filter:alpha(opacity=40);
+	/*opacity:0.4;filter:alpha(opacity=40);*/
 }
 #pauseButton,
 #soundButton {
@@ -121,7 +126,6 @@
 #pauseButton:hover,
 #soundButton:hover,
 #playButton:hover {
-	background: #444;
-	color: #afa;
+	background: #000;
+	color: #fff;
 }
-
